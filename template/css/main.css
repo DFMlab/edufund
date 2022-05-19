@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+* {
+    font-family: Jost;
+}
+
+.banner-image {
+    background-image:url(./../image/casual-life-3d-stationery-2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.footer-links li {
+    margin-top: 0.85rem;
+}
+
+.text-dark, .nav-link {
+    color: #001233;
+}
+
+.nav-link {
+    font-weight: 500;
+}
