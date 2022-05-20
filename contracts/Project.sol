@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.4;
 
 contract Project {
     /// @dev stores all the admins
