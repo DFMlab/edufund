@@ -4,6 +4,6 @@ import abi from './../contracts/ProjectAdmin.json'
 
 import { ProjectAdminAddress } from './../contracts/address.json'
 
-const useProectAdminContract = () => useContract(abi, ProjectAdminAddress)
+const useProjectAdminContract = () => useContract(abi, ProjectAdminAddress)
 
-export default useProectAdminContract
+export default useProjectAdminContract
