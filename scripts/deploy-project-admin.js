@@ -14,13 +14,37 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const Project = await hre.ethers.getContractFactory("Project");
-  const project = await Project.deploy();
+  const ProjectAdmin = await hre.ethers.getContractFactory("ProjectAdmin");
+  const projectAdmin = await ProjectAdmin.deploy();
 
-  await project.deployed();
+  await projectAdmin.deployed();
 
-  console.log("Project deployed to:", project.address);
+  storeContractData(projectAdmin)
+
+  console.log("Project deployed to:", projectAdmin.address);
 }
+
+function storeContractData(contract) {
+  const fs = require("fs");
+  const contractsDir = __dirname + "/../src/contracts";
+
+  if (!fs.existsSync(contractsDir)) {
+    fs.mkdirSync(contractsDir);
+  }
+
+  fs.writeFileSync(
+    contractsDir + "/ProjectAdmin.json",
+    JSON.stringify({ ProjectAdmin: contract.address }, undefined, 2)
+  );
+
+  const ProjectAdminArtifact = artifacts.readArtifactSync("ProjectAdmin");
+
+  fs.writeFileSync(
+    contractsDir + "/ProjectAdmin.json",
+    JSON.stringify(ProjectAdminArtifact, null, 2)
+  );
+}
+
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
