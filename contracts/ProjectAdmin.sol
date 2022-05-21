@@ -25,6 +25,7 @@ contract ProjectAdmin {
    
     function addAdmin(address admin) external onlyAdmin returns(bool)  {
         require(admin != address(0), "zeroAddressError");
+        require(!_admins[admin], "adminExistsError");
         _admins[admin] = true;
         return true;
     }
@@ -36,7 +37,7 @@ contract ProjectAdmin {
         return true;
     }
 
-    function addProject(address payable owner,string memory dataURI,uint256 [] memory deadlines,uint256[] memory targetAmounts,address payable [] memory walletAddresses) external onlyAdmin returns(bool) {
+    function addProject(address payable owner,string memory dataURI,uint256 [] memory deadlines,uint256[] memory targetAmounts,address payable [] memory walletAddresses) external onlyAdmin returns(Project) {
         // _projects[project] = true;
         Project project = new Project(owner,dataURI,deadlines,targetAmounts,walletAddresses);
 
@@ -46,7 +47,7 @@ contract ProjectAdmin {
 
         projectsCount++;
 
-        return true;
+        return project;
     }
 
     function stopProject(Project project) external onlyAdmin returns(bool) {
