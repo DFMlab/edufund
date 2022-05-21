@@ -9,14 +9,14 @@ import { useContractKit } from "@celo-tools/use-contractkit";
 import "./Header.css";
 
 const Header = () => {
-  const { connect, address } = useContractKit();
+  const { connect, address, destroy } = useContractKit();
 
   const ConnectButton = () => {
     return address ? (
       <Button
         onClick={async () => {
           try {
-            await connect();
+            await destroy();
           } catch {}
         }}
         variant="outline-success"
