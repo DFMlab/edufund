@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 import { useContractKit } from '@celo-tools/use-contractkit';
 
-export default useBalance = () => {
+const useBalance = () => {
 
     const { address, kit } = useContractKit();
 
@@ -27,3 +27,5 @@ export default useBalance = () => {
         getBalance,
     };
 };
+
+export default useBalance

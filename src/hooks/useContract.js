@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useContractKit } from '@celo-tools/use-contractkit';
 
 
-export default  useContract = (abi, contractAddress) => {
+const useContract = (abi, contractAddress) => {
 
     const { getConnectedKit, address } = useContractKit();
 
@@ -26,3 +26,5 @@ export default  useContract = (abi, contractAddress) => {
     return contract
 
 }
+
+export default useContract
