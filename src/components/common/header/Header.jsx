@@ -15,7 +15,9 @@ const Header = () => {
     return address ? (
       <Button
         onClick={async () => {
-          await connect();
+          try {
+            await connect();
+          } catch {}
         }}
         variant="outline-success"
       >
@@ -24,7 +26,9 @@ const Header = () => {
     ) : (
       <Button
         onClick={async () => {
-          await connect();
+          try {
+            await connect();
+          } catch {}
         }}
         variant="outline-success"
       >
@@ -60,9 +64,7 @@ const Header = () => {
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
-            <Button variant="outline-success" as={Link} to="/">
-              Connect Wallet
-            </Button>
+            <ConnectButton />
           </Form>
         </Navbar.Collapse>
       </Navbar>
