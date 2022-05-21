@@ -1,0 +1,98 @@
+.contact{
+    padding: 100px !important;
+    margin-top: 100px;
+    margin-bottom: 50px !important;
+}
+
+.btn-new{
+    background-color: #EF6507;
+    width: 100%;
+    color: #fff;
+    padding: 15px;
+}
+
+.btn-new:hover{
+    background-color: #191524;
+    color: #fff;
+}
+
+.form-label{
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17.07px;
+}
+
+.contact .form-control{
+    border-radius: 5px;
+}
+
+.info-box{
+    padding: 50px;
+    background-color: #F7F8FA;
+    width: 90%;
+    margin-top: 100px;
+    border-top: 2px solid #EF6507;
+}
+
+.info-box h6{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.info-box p{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.appointment {
+    padding: 50px;
+    background-image: url('/src/assets/appoint.png');
+    background-size: cover;
+    color: #fff;
+    width: 90%;
+    text-align: center;
+}
+
+.appointment h4{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: center;
+}
+
+.appointment p{
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 0px;
+}
+.btn-appoint{
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.733);
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.btn-appoint:hover{
+    background-color: #fff;
+    color: #191524;
+}
+
+.appointment hr{
+    align-content: center;
+    border-bottom: 3px solid #fff;
+    margin-left: 50px;
+}
+
+.appointment h6{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 28.8px;
+}
+
+textarea{
+    height: 150px !important;
+}

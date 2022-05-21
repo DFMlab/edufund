@@ -1,43 +1,32 @@
-import logo from './logo.svg';
+import React from "react";
+import {Header} from "./components/common"
 import './App.css';
+import {Home} from "./components/common";
+import {Footer} from "./components/common";
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {About} from "./components/common";
+import {Pricing} from "./components/common";
+import {Contact} from "./components/common";
+import ScrollToTop from "./components/ScrollToTop";
 
-import { ContractKitProvider } from "@celo-tools/use-contractkit";
-import "@celo-tools/use-contractkit/lib/styles.css";
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+      <ScrollToTop />
+        <div className='App-header'>
+           <Header />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about"  element={<About />} />
+                <Route path="/pricing"  element={<Pricing />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+           <Footer />
+        </div>
+      </BrowserRouter>
   );
 }
 
-function WrappedApp() {
-  return (
-    <ContractKitProvider
-      dapp={{
-        name: "My awesome dApp",
-        description: "My awesome description",
-        url: "https://example.com",
-      }}
-    >
-      <App />
-    </ContractKitProvider>
-  );
-}
-
-export default WrappedApp;
+export default App;

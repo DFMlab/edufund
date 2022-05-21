@@ -1,0 +1,89 @@
+.breadcrumb{
+    display: block;
+    padding: 150px;
+    background-color: #191524;
+    background-size: cover;
+    color: #fff;
+    margin-left: -5px;
+    background-repeat: no-repeat;
+}
+
+.breadcrumb h2{
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 65px;
+}
+
+.breadcrumb p{
+    font-size: 17px;
+    line-height: 28.9px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.795);
+}
+
+.form-group{
+    width: 600px;
+    text-align: left;
+    padding: 100px 100px 150px !important;
+    margin-top: 100px;
+    margin-bottom: 0px !important;
+}
+
+.form-group label{
+    margin-top: 30px;
+    margin-left: 0px;
+    margin-bottom: 15px !important;
+}
+
+.form-group textarea{
+    margin-bottom: 30px !important;
+}
+
+.form-group input{
+    border-radius: 5px;
+    border: 1px solid #dadada;
+}
+
+.form-group h5{
+    font-weight: 600;
+}
+
+.form-group i{
+    color: #EF6507;
+}
+
+.form-group textarea::placeholder{
+    font-size: 14px;
+    color: #000;
+}
+
+.form-group .form-submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #EF6507;
+    border-radius: 3px;
+    margin-left: 0px;
+}
+
+.form-group .form-submit:hover{
+    background-color: #1B1726;
+    color: #fff;
+}
+
+.form-group .form-submit i{
+    margin-left: 20px;
+    margin-top: 3px;
+    color: #fff;
+}
+
+@media screen and (max-width: 968px) {
+    .form-group{
+        width: 100%;
+        padding: 30px 20px 100px !important;
+    }
+
+    .form-group .form-submit{
+        margin-left: 5px !important;
+    }
+}

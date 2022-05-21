@@ -217,6 +217,10 @@ contract Project {
         _progressURIs.pop();  
     }
 
+    function progressCount() external view returns(uint256) {
+        return _progressURIs.length;
+    }
+
     function start() external {
         require(msg.sender == _projectAdmin, "unAuthorizedError");
         require(_projectState == ProjectState.STOP, "projectStartError");

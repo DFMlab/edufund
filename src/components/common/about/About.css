@@ -1,0 +1,100 @@
+
+.about-main h6, .custom-main h6{
+    color: #EF6507;
+    font-size: 12px;
+    line-height: 16.8px;
+    margin-top: 70px;
+    background-color: #ef64073d;
+    width: 200px;
+    padding: 15px 35px;
+    border-radius: 25px;
+}
+
+.custom-main, .about-main{
+    margin-top: 100px;
+}
+.about-main h2{
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 45px;
+    margin-top: 20px;
+}
+
+.about-main h5{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30.6px;
+    color: #1b17269f;
+}
+
+.about-main p{
+    font-size: 14px;
+    color: #1b17269f;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 30px 0px;
+}
+
+.about-main a{
+    color: #EF6507;
+    text-decoration: underline;
+}
+
+.abt-sec h6{
+    color: #EF6507;
+    font-size: 12px;
+    line-height: 16.8px;
+    margin-top: 70px;
+    background-color: #ef64073d;
+    width: 200px;
+    padding: 15px 35px;
+    border-radius: 25px;
+    margin: 30px 0px;
+}
+
+
+.abt-sec h1{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44.8px;
+    color: #1c1826;
+}
+
+.abt-sec h5{
+    font-size: 16px;
+    line-height: 35px;
+    font-weight: 400;
+    padding: 0px 170px;
+}
+
+.abt-info{
+    background-color: #f7f8fa;
+    padding: 50px 30px;
+    border-radius: 12px;
+    width: 310px;
+    margin: 0px 30px;
+}
+
+.abt-info h3{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 38.4px;
+}
+
+.abt-info p{
+    font-size: 16px;
+    color: #1b17269f;
+    line-height: 27.2px;
+    font-weight: 400;
+}
+
+.abt-right{
+    margin-top: 30px;
+}
+
+.mission h2{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 38.4px;
+    color: #1c1826;
+}
