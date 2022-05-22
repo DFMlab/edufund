@@ -90,7 +90,7 @@ const StartCampaign = () => {
         },
       });
 
-      console.log(url);
+      console.log(data, url);
     };
 
     try {
