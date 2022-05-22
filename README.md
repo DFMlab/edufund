@@ -20,12 +20,11 @@ https://drive.google.com/file/d/1pbLpWjnHLkVbTbLNiJIkwVwd2ERRFYIs/view
 
 ## DEVELOPMENT TOOLS USED
 
-CELO use-contractkit https://github.com/celo-org/use-contractkit
-React https://github.com/facebook/create-react-app
-Hardhat https://hardhat.org/
-Infura IPFS https://infura.io/
-Django https://www.djangoproject.com/
-
+CELO use-contractkit https://github.com/celo-org/use-contractkit \
+React https://github.com/facebook/create-react-app \
+Hardhat https://hardhat.org/ \
+Infura IPFS https://infura.io/ \
+Django https://www.djangoproject.com/ \
 
 ## Getting Started with Create React App
 
