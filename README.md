@@ -6,6 +6,25 @@ Provide educational funding.
 Reduce crowdfunding platform fraud.
 Promote cryptocurrency adoption by establishing a utility-based economy.
 
+## Demo
+
+DAPP URL
+https://edufund-ekzef4s2o-dfmlab.vercel.app/
+
+SMART CONTRACT ADDRESS
+0xE82840DFB0CFd82D099847e16BCE3C05B2Edfe79
+https://alfajores-blockscout.celo-testnet.org/address/0xE82840DFB0CFd82D099847e16BCE3C05B2Edfe79/transactions
+
+PITCH DECK
+https://drive.google.com/file/d/1pbLpWjnHLkVbTbLNiJIkwVwd2ERRFYIs/view
+
+## DEVELOPMENT TOOLS USED
+
+CELO use-contractkit https://github.com/celo-org/use-contractkit \
+React https://github.com/facebook/create-react-app \
+Hardhat https://hardhat.org/ \
+Infura IPFS https://infura.io/ \
+Django https://www.djangoproject.com/ \
 
 ## Getting Started with Create React App
 
