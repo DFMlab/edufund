@@ -1,8 +1,9 @@
 import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { Container } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import { Row } from "react-bootstrap";
+import { Row, Nav } from "react-bootstrap";
 import { Card, Image, ProgressBar, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import useProjectAdminContract from "./../../../hooks/useProjectAdminContract.js";
 
@@ -249,7 +250,9 @@ const Home = () => {
                 At Edufund we create equal opportunity for passionate learners
                 to learn and earn with digital skills
               </p>
-              <button className="btn btn-primary">Get Started</button>
+              <Link className="btn btn-lg bg-primary text-white" as={Link} to="/startcampaign">
+              Get Start
+            </Link>
             </Col>
             <Col xs="6" className="mainRight">
               <img src="learning.gif" alt="learning" width="100%" />

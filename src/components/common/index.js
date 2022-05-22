@@ -5,6 +5,7 @@ import 'react-router-dom';
 import About from "./about";
 import Pricing from "./pricing";
 import Contact from "./contact";
+import StartCampaign from "./startCampaign";
 
 
 export {
@@ -14,4 +15,5 @@ export {
     About,
     Pricing,
     Contact,
+    StartCampaign
 }
