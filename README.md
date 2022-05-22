@@ -17,6 +17,7 @@ https://alfajores-blockscout.celo-testnet.org/address/0xE82840DFB0CFd82D099847e1
 
 PITCH DECK
 https://drive.google.com/file/d/1pbLpWjnHLkVbTbLNiJIkwVwd2ERRFYIs/view
+https://youtu.be/iq6iZWgGiuk
 
 ## DEVELOPMENT TOOLS USED
 
