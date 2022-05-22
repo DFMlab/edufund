@@ -10,68 +10,41 @@ const About = () => (
     <center>
       <div className="breadcrumb">
         <h2>About Us</h2>
-        <p>Bridging the gap between the physical and the digital world</p>
+        <p>Making learning</p>
       </div>
     </center>
     <Container className="about-main" id="about">
       <Row>
-        <Col xs="6">
-          <h6>ABOUT SWAPBASE</h6>
-          <h2>
-            We are a team of data enthusiats that see data as an SI unit for
-            everthing.
-          </h2>
-          <h5>
-            Our team comprises Machine Learning Engineers and Researchers that
-            understand the pain points around physical data management in
-            Africa.
-          </h5>
-          <p>To learn more about how we can help you solve this problem </p>
-          <Link to="/contact">
-            Contact us <i className="fa fa-arrow-right" aria-hidden="true"></i>
-          </Link>
-        </Col>
-        <Col xs="6">
-          <img src="/abt.png" width={"100%"} alt="about" />
-        </Col>
-      </Row>
-    </Container>
-    <Container className="abt-sec">
-      <center>
-        <h6>VALUE STATEMENT</h6>
-        <h1>We believe data should never lose value </h1>
-        <h5>
-          From cheques,account opening, identity documents, transactional data
-          and loan applications. There is a need to process that information to
-          deliver services quickly while also protecting customer information
-          and complying with ever changing government regulations.
-        </h5>
-      </center>
-    </Container>
-    <Container className="mission">
-      <Row>
-        <Col xs="4" className="abt-info">
-          <img src="/vision.png" alt="vision" width={"50px"} />
-          <h3>Our Vision</h3>
-          <p>
-            We envision a world with exclusive digital information for
-            businesses and individuals
+        <Col xs="12">
+          <h6>ABOUT EDUFUND</h6>
+          <p className="display-2">
+            EduFund is a platform where you can raise funds to access
+            educational resources online on platforms like learn.dfmlab.com (or
+            any platform that supports crypto payment) or for traditional
+            schools that will support crypto payment. The idea is that there are
+            millions of people in the world today (800 million+ in Africa) who
+            are not educated, do not have access to digital education, and do
+            not have access to funds to access educational/learning resources.
+            They can easily raise funds on the platform; it is as simple as
+            creating a new Facebook profile. An interested learner can start a
+            campaign (a request to raise money for learning), enter the required
+            information, and then submit it for review. For now, the review and
+            approval of a new campaign is done by the DFMlab team. The plan is
+            to create a DAO where professionals in the area of interest can
+            collectively review and approve campaign requests. Once the campaign
+            is published, investors or supporters can fund it with just the
+            click of a button. The amount raised for a campaign is held in a
+            smart contract and is only released to the educator/content creator
+            once the learner completes the learning objective. This helps reduce
+            the possibility of campaign fraud while providing a credit system to
+            access educational materials and content. Through integration,
+            existing learning platforms can provide access to educational
+            content in advance, with the smart contract providing escrow
+            protection. This will protect the learner, educator, and investor on
+            the platform. Our solution will ensure: Provide educational funding.
+            Reduce crowdfunding platform fraud. Promote cryptocurrency adoption
+            by establishing a utility-based economy.
           </p>
-        </Col>
-        <Col xs="4" className="abt-info">
-          <img src="/mission.png" alt="mission" width={"50px"} />
-          <h3>Our Mission</h3>
-          <p>
-            To make data easily accessible, manageable and usable for data
-            owners
-          </p>
-        </Col>
-        <Col xs="4" className="abt-right">
-          <h2>
-            Our aim is to serve as a bridge between physical data types and
-            digital data using Artificial Intelligence to facilitate growth in
-            the African modern economy.
-          </h2>
         </Col>
       </Row>
     </Container>

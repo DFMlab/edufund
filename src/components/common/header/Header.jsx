@@ -54,13 +54,13 @@ const Header = () => {
             navbarScroll
           >
             <Nav.Link as={Link} to="/">
-              Start
+              Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/">
-              Team
+            <Nav.Link as={Link} to="/about">
+              About
             </Nav.Link>
-            <Nav.Link as={Link} to="/">
-              Our Mission
+            <Nav.Link as={Link} to="/startCampaign">
+              Start Campaign
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
@@ -86,14 +86,14 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/solution" eventKey="3">
-                  Start
+                <Nav.Link as={Link} to="/" eventKey="3">
+                  Home
                 </Nav.Link>
-                <Nav.Link as={Link} to="/pricing" eventKey="4">
-                  Team
+                <Nav.Link as={Link} to="/about" eventKey="4">
+                  About
                 </Nav.Link>
-                <Nav.Link as={Link} to="/about" eventKey="5">
-                  Our Mission
+                <Nav.Link as={Link} to="/startcampaign" eventKey="5">
+                  Start Campaign
                 </Nav.Link>
               </Nav>
               <Form className="d-flex">

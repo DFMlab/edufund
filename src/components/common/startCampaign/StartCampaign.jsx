@@ -8,6 +8,8 @@ import Confirm from "./Confirm";
 import Success from "./Success";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 
+import { CREATE_ENDPOINT } from "./../../../constants/endpoint.json";
+
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
 const StartCampaign = () => {
@@ -57,8 +59,7 @@ const StartCampaign = () => {
         }
       }
 
-
-      var timestamp = Date.parse(startCampaign["date"])
+      var timestamp = Date.parse(startCampaign["date"]);
 
       const data = {
         walletAddress: startCampaign["walletAddress"],
@@ -77,15 +78,26 @@ const StartCampaign = () => {
 
       const url = `https://ipfs.infura.io/ipfs/${added.path}`;
 
+      await fetch(CREATE_ENDPOINT, {
+        method: "POST",
+        body: JSON.stringify({
+          name: startCampaign["fullName"],
+          email: startCampaign["email"],
+          metaURI: url,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
       console.log(url);
     };
 
     try {
       uploadToIPFS();
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
-
   };
 
   const formSteps = [

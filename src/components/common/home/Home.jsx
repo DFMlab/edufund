@@ -251,7 +251,7 @@ const Home = () => {
                 to learn and earn with digital skills
               </p>
               <Link className="btn btn-lg bg-primary text-white" as={Link} to="/startcampaign">
-              Get Start
+              Get Started
             </Link>
             </Col>
             <Col xs="6" className="mainRight">
@@ -260,50 +260,7 @@ const Home = () => {
           </Row>
         </Container>
       </div>
-      <section>
-        <Container className="clients">
-          <Row>
-            <Col lg="2" md="3" sm="4" xs="6">
-              <h3 className=" d-flex align-items-center gap-1">
-                <i className="fab fa-vimeo"></i> Vimeo
-              </h3>
-            </Col>
 
-            <Col lg="2" md="3" sm="4" xs="6">
-              <h3 className=" d-flex align-items-center gap-1">
-                <i className="fab fa-pinterest"></i> Pinterest
-              </h3>
-            </Col>
-
-            <Col lg="2" md="3" sm="4" xs="6">
-              <h3 className=" d-flex align-items-center gap-1">
-                <i className="fab fa-dribbble"></i> Dribble
-              </h3>
-            </Col>
-
-            <Col lg="2" md="3" sm="4" xs="6">
-              <h3 className=" d-flex align-items-center gap-1">
-                {" "}
-                <i className="fab fa-apple"></i> Apple
-              </h3>
-            </Col>
-
-            <Col lg="2" md="3" sm="4" xs="6">
-              <h3 className=" d-flex align-items-center gap-1">
-                {" "}
-                <i className="fab fa-finder"></i> Finder
-              </h3>
-            </Col>
-
-            <Col lg="2" md="3" sm="4" xs="6">
-              <h2 className=" d-flex align-items-center gap-1">
-                {" "}
-                <i className="fab fa-google-plus"></i> Google
-              </h2>
-            </Col>
-          </Row>
-        </Container>
-      </section>
       <div className="our-types">
         <Container>
           <h2>How It Works</h2>
@@ -361,7 +318,7 @@ const Home = () => {
       </div>
       <div className="our-types-future">
         <Container>
-          <h2>Meet Future Innovators</h2>
+          <h2>Active Campaigns</h2>
           <Row style={{ marginLeft: "0px !important", marginRight: "0px" }}>
             <ProjectCards />
             <button
