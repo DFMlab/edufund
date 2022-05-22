@@ -64,7 +64,7 @@ const Home = () => {
     return projectsAddress;
   }, [startProject, totalProject, projectAdminContract]);
 
-  const getNextProjects = async () => {
+  const getNextProjects = async (_totalProject, _endstartProject) => {
     if (totalProject > startProject || startProject === 0) {
       setStartProject(totalProject + pageSize);
       const _projectsAddress = await Promise.all(getProjects());
@@ -84,6 +84,7 @@ const Home = () => {
     setProjects,
     getTotalProject,
   ]);
+
 
   const ProjectCard = ({ contractAddress }) => {
     const projectContract = useProjectContract(contractAddress);
@@ -144,6 +145,10 @@ const Home = () => {
         return "0"
       }
     }, [metaData]);
+
+    if(metaData["0"] !== "0") {
+      return null
+    }
 
     return (
       <Col xs="4">
