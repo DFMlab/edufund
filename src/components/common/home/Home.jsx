@@ -1,51 +1,198 @@
-import React from "react";
+import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { Container } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Card, Image, ProgressBar, Form } from "react-bootstrap";
 
+import useProjectAdminContract from "./../../../hooks/useProjectAdminContract.js";
+
+import useProjectContract from "./../../../hooks/useProjectContract.js";
+
+import donateUtil from "./../../../utils/donate.js";
+
+import { useContractKit } from "@celo-tools/use-contractkit";
+
+import getMetaData from "./../../../utils/getMetaData.js";
+
+import BigNumber from "big-number";
+
 import "./Home.css";
 
 const Home = () => {
+  const projectAdminContract = useProjectAdminContract();
 
-  const ProjectCard = () => {
+  const [startProject, setStartProject] = useState(0);
+
+  const [totalProject, setTotalProject] = useState(0);
+
+  const [projects, setProjects] = useState([]);
+
+  const { address, performActions } = useContractKit();
+
+  const pageSize = 10;
+
+  const getTotalProject = useCallback(() => {
+    const _getTotalProject = async () => {
+      const _totalProject = await projectAdminContract.methods
+        .projectsCount()
+        .call();
+      console.log(_totalProject);
+
+      setTotalProject(_totalProject);
+    };
+    _getTotalProject();
+  }, [setTotalProject, projectAdminContract]);
+
+  const getProjects = useCallback(() => {
+    const projectsAddress = [];
+
+    const _getProjectAddress = async (projectNumber) => {
+      const _projectAddress = await projectAdminContract.methods
+        ._projects(projectNumber)
+        .call();
+      return _projectAddress;
+    };
+
+    for (
+      let _startProject = parseInt(startProject);
+      _startProject < startProject + pageSize && _startProject < totalProject;
+      _startProject++
+    ) {
+      projectsAddress.push(_getProjectAddress(_startProject));
+    }
+
+    return projectsAddress;
+  }, [startProject, totalProject, projectAdminContract]);
+
+  const getNextProjects = async () => {
+    if (totalProject > startProject || startProject === 0) {
+      setStartProject(totalProject + pageSize);
+      const _projectsAddress = await Promise.all(getProjects());
+
+      setProjects([...projects, ..._projectsAddress]);
+    }
+  };
+
+  useEffect(() => {
+    if (address && projectAdminContract && totalProject === 0) {
+      console.log(getTotalProject());
+    }
+  }, [
+    address,
+    totalProject,
+    projectAdminContract,
+    setProjects,
+    getTotalProject,
+  ]);
+
+  const ProjectCard = ({ contractAddress }) => {
+    const projectContract = useProjectContract(contractAddress);
+
+    const [amount, setAmount] = useState(0);
+
+    const [metaData, setMetaData] = useState({});
+
+    useEffect(() => {
+      if (projectContract) {
+        const _setMetaData = async () => {
+          setMetaData(await _getProjectMetaData(projectContract));
+        };
+
+        _setMetaData();
+      }
+    }, [projectContract]);
+
+    const _getProjectMetaData = async (contract) => {
+      return await getMetaData(contract);
+    };
+
+    const donate = (e, customAmount) => {
+      e.preventDefault();
+      donateUtil(projectContract, performActions, customAmount);
+    };
+
+    const amountRaised = useMemo(() => {
+      console.log(metaData)
+      if (metaData !== {}) {
+
+        console.log(BigNumber(metaData["2"]).div(BigNumber(10).power(18)).toString())
+      
+        return BigNumber(metaData["2"]).div(BigNumber(10).power(18)).toString();
+      } else {
+        return "0"
+      }
+    }, [metaData]);
+
     return (
       <Col xs="4">
         <Card
-          style={{ width: "24rem" }}
-          className="shadow p-0 mb-2 bg-body rounded type-card"
+          style={{ width: "22rem" }}
+          className="shadow m-auto p-0 mb-2 bg-body rounded type-card"
         >
           <Card.Body>
             <Image src="django.jpg" width="100%" />
             <Card.Title className="type-card__title">
-              {" "}
-              Help me learn Django
+              {metaData ? metaData["1"] : "nothing"}
             </Card.Title>
             <Card.Subtitle className="subtitle">
               My name is Femi. i'm interested in learning Django framework for
               backend development. I saw a course online with a lot of rating on
               Udemy
               <br /> <br />
-              <ProgressBar now={60} />
+              <div className="custom-amount my-3">
+                <button
+                  onClick={(e) => donate(e, "10")}
+                  className="btn p-3 m-auto btn-sm btn-primary"
+                >
+                  $10
+                </button>
+                <button
+                  onClick={(e) => donate(e, "20")}
+                  className="btn p-3 m-auto btn-sm btn-primary"
+                >
+                  $20
+                </button>
+                <button
+                  onClick={(e) => donate(e, "50")}
+                  className="btn p-3 m-auto btn-sm btn-primary"
+                >
+                  $50
+                </button>
+                <button
+                  onClick={(e) => donate(e, "100")}
+                  className="btn p-3 m-auto btn-sm btn-primary"
+                >
+                  $100
+                </button>
+              </div>
               <Form>
-                <div className="custom-amount">
-                  <Form.Control type="text" value="$30" />
-                  <Form.Control type="text" value="$30" />
-                  <Form.Control type="text" value="$30" />
-                  <Form.Control type="text" value="$30" />
-                  <Form.Control type="text" value="$30" />
-                </div>
                 <div className="desired-amount">
                   <Form.Control
+                    onChange={(e) => {
+                      setAmount(e.target.value);
+                    }}
                     name="custom amount"
                     placeholder="Enter a custom amount"
                   />
-                  <button className="btn btn-primary">Donate</button>
+                  <button
+                    onClick={(e) => donate(e, amount)}
+                    className="btn btn-primary"
+                  >
+                    Donate
+                  </button>
                 </div>
               </Form>
+              <ProgressBar
+                className="mt-5"
+                now={
+                  metaData
+                    ? BigNumber(metaData["2"]).div(metaData["3"]).multiply(100)
+                    : 0
+                }
+              />
               <div className="amount">
                 <p>Amount raised</p>
-                <p>60%</p>
+                <p> {amountRaised} CELO</p>
               </div>
             </Card.Subtitle>
           </Card.Body>
@@ -55,13 +202,12 @@ const Home = () => {
   };
 
   const ProjectCards = () => {
-    
-    const cards = [1,2,3,4]
+    const projectCards = projects.map((e) => (
+      <ProjectCard key={e} contractAddress={e} />
+    ));
 
-    const projectCards = cards.map(e => <ProjectCard/>) 
-
-    return ( projectCards )
-  }
+    return projectCards;
+  };
 
   return (
     <main>
@@ -189,7 +335,14 @@ const Home = () => {
         <Container>
           <h2>Meet Future Innovators</h2>
           <Row style={{ marginLeft: "0px !important", marginRight: "0px" }}>
-            <ProjectCards/>
+            <ProjectCards />
+            <button
+              id="loadMoreBtn"
+              onClick={() => getNextProjects()}
+              className="btn btn-primary"
+            >
+              Load More
+            </button>
           </Row>
         </Container>
       </div>

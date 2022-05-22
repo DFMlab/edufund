@@ -12,7 +12,7 @@ contract ProjectAdmin {
 
     mapping(uint => Project) public _projects;
 
-    uint256 projectsCount = 0;
+    uint256 public projectsCount = 0;
 
     constructor() {
         _admins[msg.sender] = true;

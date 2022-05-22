@@ -79,6 +79,10 @@ contract Project {
         addStages(targetAmounts, walletAddresses, deadlines);
     }
 
+    function getMetaData() external view returns (ProjectState, address, uint256, uint256, uint256, string memory) {
+        return ( _projectState, _owner, _totalRaised, _totalTargetAmount, _deadline, _dataURI);
+    }
+
     function addStages(
         uint256[] memory targetAmounts,
         address payable[] memory walletAddresses,
