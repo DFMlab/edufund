@@ -92,6 +92,8 @@ const Home = () => {
 
     const [metaData, setMetaData] = useState({});
 
+    const [meta, setMeta] = useState({})
+
     useEffect(() => {
       if (projectContract) {
         const _setMetaData = async () => {
@@ -102,6 +104,18 @@ const Home = () => {
       }
     }, [projectContract]);
 
+
+    useEffect(() => {
+      
+      if(metaData) {
+        const _setMeta = async () => {
+          setMeta(await _getProjectMeta(metaData["5"]));
+        };
+
+        _setMeta();
+      }
+    },[metaData])
+
     const _getProjectMetaData = async (contract) => {
       return await getMetaData(contract);
     };
@@ -111,12 +125,20 @@ const Home = () => {
       donateUtil(projectContract, performActions, customAmount);
     };
 
+    const _getProjectMeta = async (url) => {
+      const response =  await fetch(url)
+
+      const _meta = await response.json()
+
+      console.log(_meta)
+
+      return _meta
+
+    }
+
     const amountRaised = useMemo(() => {
       console.log(metaData)
-      if (metaData !== {}) {
-
-        console.log(BigNumber(metaData["2"]).div(BigNumber(10).power(18)).toString())
-      
+      if (metaData !== {}) {      
         return BigNumber(metaData["2"]).div(BigNumber(10).power(18)).toString();
       } else {
         return "0"
@@ -130,14 +152,12 @@ const Home = () => {
           className="shadow m-auto p-0 mb-2 bg-body rounded type-card"
         >
           <Card.Body>
-            <Image src="django.jpg" width="100%" />
+            <Image src={ meta.images ?  meta.images[0]: '#'} width="100%" />
             <Card.Title className="type-card__title">
-              {metaData ? metaData["1"] : "nothing"}
+            { meta.projectTitle }
             </Card.Title>
             <Card.Subtitle className="subtitle">
-              My name is Femi. i'm interested in learning Django framework for
-              backend development. I saw a course online with a lot of rating on
-              Udemy
+              { meta.description }
               <br /> <br />
               <div className="custom-amount my-3">
                 <button
