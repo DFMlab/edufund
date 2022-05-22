@@ -6,6 +6,10 @@ Provide educational funding.
 Reduce crowdfunding platform fraud.
 Promote cryptocurrency adoption by establishing a utility-based economy.
 
+## Demo
+
+https://edufund-ekzef4s2o-dfmlab.vercel.app/
+
 
 ## Getting Started with Create React App
 
