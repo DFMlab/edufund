@@ -33,7 +33,7 @@ const Confirm = ({ submitForm, startCampaign, prevStep }) => {
             </Button>
             <Button
               className="rounded my-3 ms-auto"
-              onClick={async () => await submitForm(startCampaign)}
+              onClick={() =>  submitForm(startCampaign)}
             >
               Next
             </Button>

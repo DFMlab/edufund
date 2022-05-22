@@ -41,7 +41,7 @@ export default function CampaignDetails({
               value={startCampaign?.campaignDetails}
             />
             <label htmlFor="social" className="mt-2">
-              Social
+              Images
             </label>
             <div className="d-flex align-items-center ">
             <input

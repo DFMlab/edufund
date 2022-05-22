@@ -118,7 +118,8 @@ const StartCampaign = () => {
       prevStep={prevStep}
       setStartCampaign={setStartCampaign}
     />,
-    <Confirm nextStep={nextStep} prevStep={prevStep} submitForm={submitForm} />,
+    <Confirm prevStep={prevStep} startCampaign={startCampaign}
+    submitForm={submitForm} />,
     <Success />,
   ];
   return <div>{formSteps[step]}</div>;

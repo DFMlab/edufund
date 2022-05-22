@@ -23,7 +23,9 @@ const AmountMilestone = ({setStartCampaign, startCampaign, nextStep, prevStep   
               required
             />
             <div className="d-flex my-5">
-
+            <label htmlFor="name" className="mt-2">
+              Deadline
+            </label>
             <input
               type="date"
               name="social"

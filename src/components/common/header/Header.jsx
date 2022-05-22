@@ -44,7 +44,7 @@ const Header = () => {
           <button className="btn-close float-end"></button>
         </div>
         <Navbar.Brand as={Link} to="/">
-          <img src="logo-black.png" alt="brand-logo" width={"150px"} />
+          <img src="logo-black.png" alt="brand-logo" height={"100px"} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
