@@ -43,7 +43,6 @@ const AmountMilestone = ({setStartCampaign, startCampaign, nextStep, prevStep   
             </div>
 
             
-            
             <div className="d-flex">
               <Button
                 className="my-3 rounded align-self-end"
